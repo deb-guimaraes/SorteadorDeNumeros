@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+
+    <link rel="stylesheet" href="/src/styles/style.css" />
+
+    <title>Sorteador de números</title>
+  </head>
+
+  <body>
+    <header>NUMBERS</header>
+
+    <div id="container">
+      <div id="title-container">
+        <span> ONLINE - GRATUITO </span>
+        <h1>SORTEADOR DE NÚMEROS</h1>
+      </div>
+
+      <div id="div-content">
+        <p>
+          <span> QUERO SORTEAR: </span>
+          Defina o intervalo e a quantidade de números, clique em "Sortear" e
+          veja os resultados na tela. É rápido e fácil!
+        </p>
+
+        <div id="inputs-numbers">
+          <label>
+            números
+            <input type="number"/>
+          </label>
+
+          <label>
+            de
+            <input type="number"/>
+          </label>
+
+          <label>
+            de
+            <input type="number"/>
+          </label>
+        </div>
+
+        <div id="toggle-switch">
+          <label class="switch"></label>
+          <input class="checkbox" type="checkbox" />
+          
+          <label>não repetir o número</label>
+        </div>
+
+        <button id="btn-sortear">
+          SORTEAR
+          <i class="hgi hgi-stroke hgi-arrow-right-02"></i>
+          <i class="hgi hgi-stroke hgi-replay"></i>
+        </button>
+      </div>
+
+      <footer>
+        <p>
+          <span>
+            <i class="hgi hgi-stroke hgi-question"></i>
+            Como funciona o sorteador de números?
+          </span>
+          O sorteador utiliza um algoritmo de geração aleatória para criar
+          números dentro do intervalo especificado pelo usuário.
+        </p>
+
+        <p>
+          <span>
+            <i class="hgi hgi-stroke hgi-question"></i>
+            Posso escolher o intervalo dos números?
+          </span>
+          Sim, você pode definir os valores mínimo e máximo para o intervalo dos
+          números sorteados.
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
