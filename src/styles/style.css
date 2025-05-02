@@ -1,0 +1,280 @@
+@import url(global.css);
+
+body {
+    background: #020202 url("../assets/Linha.svg");
+    color: white;
+}
+
+header {
+    display: grid;
+    place-content: center;
+    padding: 16px;
+    margin: 6px;
+    top: 60px;
+
+    font: 800 32px var(--ff-sora);
+}
+
+#title-container {
+    display: grid;
+    margin: 30px 20px 12px 20px;
+}
+
+#title-container span {
+    font: var(--rm-overline);
+    color: var(--content-secondary);
+    margin: 0 20px 0 20px;
+}
+
+#title-container h1 {
+    font: var(--sora-large);
+    margin: 0 20px 0 20px;
+    place-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+#div-main {
+    padding: 20px;
+    margin: 20px;
+}
+
+#div-main p {
+    font: var(--rf-p-medium);
+    color: white;
+    margin-bottom: 20px;
+}
+
+#div-main span {
+    font: var(--rf-l-medium);
+    display: grid;
+    place-items: stretch;
+}
+
+
+#inputs-numbers {
+    font: var(--rf-l-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    flex-direction: row;
+    gap: 10px;
+    height: 100px;
+}
+
+#inputs-numbers label {
+    margin-bottom: 10px;
+    color: var(--content-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    flex-direction: column;
+    gap: 10px; 
+    text-align: center;
+}
+
+#inputs-numbers label:active, 
+#inputs-numbers label:hover {
+    color: var(--content-brand);
+}
+
+#inputs-numbers input {
+    color: white;
+    font: var(--sora-medium);
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    padding: 8px;
+    width: 70px;
+    border: none;
+    outline: none;
+    background-clip: padding-box;
+    transition: all 0.3s ease;
+}
+
+#inputs-numbers input:hover,
+#inputs-numbers input:focus,
+#inputs-numbers input:active {
+background:
+    linear-gradient(var(--background-secondary), var(--background-secondary)) padding-box,
+    var(--gradient-border) border-box;
+border: 2px solid transparent;
+}
+  
+#toggle-switch {
+    margin: 20px 0;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+label {
+    margin: 5px;
+}
+    
+.switch {
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    height: 32px;
+    border-radius: 20px;
+    background-color: rgb(105, 105, 105);
+    margin: 15px 0;
+    position: relative;
+}
+
+.checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox:checked + .slider::before {
+    transform: translateX(18px);
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 34px;
+    transition: 0.4s;
+}        
+      
+.slider::before {
+    content: '';
+    position: absolute;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    left: 4px;
+    top: 3px;
+    transition: 0.4s;
+}
+        
+      
+#btn {
+    width: 100%;
+    font: var(--rf-l-medium);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--background-tertiary);
+    border: none;
+}
+
+#btn:hover {
+    cursor: pointer;
+    background:
+            linear-gradient(var(--background-secondary), var(--background-secondary)) padding-box,
+            var(--gradient-border) border-box;
+    border: 2px solid transparent;
+}
+
+.div-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;   
+
+    height: 300px;
+    margin: 20px;
+    gap: 20px;   
+}
+
+.div-result p {
+    font: var(--rf-l-medium);
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.resultado p {
+    font: var(--rm-overline);
+}
+
+.div-result span {
+    position: relative;
+    font: var(--sora-large);
+    color: var(--background-secondary);
+    padding: 5px 7px;
+    border-radius: 10px;
+    margin: 20px;
+    animation: opac 2.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes opac {
+    0% {
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+        color: var(--content-secondary);        
+    }
+    100% {
+        opacity: 100;
+        color: var(--content-brand);
+    }
+    
+}
+
+.div-result span::before {
+    content: "";
+    position: absolute;
+    background: var(--content-brand);
+    padding: 4px;
+    border-radius: 15px;
+    z-index: -1;
+    left: -5px;
+    top: -5px;
+    height: 90%;
+    width: 100%;
+
+    animation: turn 2s;
+    animation-fill-mode: forwards;   
+
+}
+
+@keyframes turn {
+    0%{
+
+    }
+    100% {
+        transform: rotate(180deg);
+        opacity: 0;
+    }
+}
+
+
+footer {
+    padding: 20px;
+    margin: 20px;
+    font: var(--rf-p-small);
+    color: var(--content-secondary);
+
+    & span {
+        display: block;
+        font: var(--rf-p-medium);
+        color: var(--content-brand);
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .container > * {
+        flex: 1 1 50%;
+    }
+}
