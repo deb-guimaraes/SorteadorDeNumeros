@@ -20,7 +20,7 @@
         <h1>SORTEADOR DE NÚMEROS</h1>
       </div>
 
-      <div id="div-content">
+      <div id="div-main">
         <p>
           <span> QUERO SORTEAR: </span>
           Defina o intervalo e a quantidade de números, clique em "Sortear" e
@@ -30,30 +30,43 @@
         <div id="inputs-numbers">
           <label>
             números
-            <input type="number"/>
+            <input class="num-inp" type="number"/>
           </label>
 
           <label>
             de
-            <input type="number"/>
+            <input class="min-inp" type="number"/>
           </label>
 
           <label>
             de
-            <input type="number"/>
+            <input class="max-inp" type="number"/>
           </label>
         </div>
 
         <div id="toggle-switch">
-          <label class="switch"></label>
-          <input class="checkbox" type="checkbox" />
+          <label class="switch">
+            <input class="checkbox" type="checkbox" />
+            <span class="slider"></span>
+          </label>
           
           <label>não repetir o número</label>
         </div>
 
-        <button id="btn-sortear">
+        <button id="btn">
           SORTEAR
           <i class="hgi hgi-stroke hgi-arrow-right-02"></i>
+          
+        </button>
+      </div>
+
+      <div id="div-result" hidden >
+        <p>
+          <span>RESULTADO DO SORTEIO</span>
+        </p>
+
+        <button id="btn">
+          SORTEAR NOVAMENTE
           <i class="hgi hgi-stroke hgi-replay"></i>
         </button>
       </div>
