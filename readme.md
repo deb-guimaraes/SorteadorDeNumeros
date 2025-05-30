@@ -21,9 +21,9 @@ Uma aplicação web de sorteio de números. Simples e responsivo, foi desenvolvi
 
 ![
  design da página versão desktop do sorteador de números
-](image.png)
+](./assets/image.png)
 
-![design da página versão mobile do sorteador de números](image-1.png)
+![design da página versão mobile do sorteador de números](./assets/image-1.png)
 
 ## Como executar o projeto
 1. clone o repositório:
