@@ -32,10 +32,16 @@ header {
     place-content: center;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+#container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 
@@ -159,7 +165,7 @@ label {
 }
         
       
-#btn {
+.btn {
     width: 100%;
     font: var(--rf-l-medium);
     color: white;
@@ -169,7 +175,7 @@ label {
     border: none;
 }
 
-#btn:hover {
+.btn:hover {
     cursor: pointer;
     background:
             linear-gradient(var(--background-secondary), var(--background-secondary)) padding-box,
@@ -177,7 +183,7 @@ label {
     border: 2px solid transparent;
 }
 
-.div-result {
+#div-result {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,7 +194,7 @@ label {
     gap: 20px;   
 }
 
-.div-result p {
+#div-result p {
     font: var(--rf-l-medium);
     margin: 10px;
     display: flex;
@@ -201,7 +207,7 @@ label {
     font: var(--rm-overline);
 }
 
-.div-result span {
+#div-result span {
     position: relative;
     font: var(--sora-large);
     color: var(--background-secondary);
@@ -227,7 +233,7 @@ label {
     
 }
 
-.div-result span::before {
+#div-result p span::before {
     content: "";
     position: absolute;
     background: var(--content-brand);
@@ -269,12 +275,48 @@ footer {
 }
 
 @media (min-width: 768px) {
-    .container {
-        flex-direction: row;
-        flex-wrap: wrap;
+    #container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 50px;
+        align-items: start;
+        grid-template-areas: 
+            "title content"
+            "footer content";
     }
 
-    .container > * {
-        flex: 1 1 50%;
+    #title-container {
+        grid-area: title;
+    }
+
+    #div-main {
+        grid-area: content;
+    }
+
+    #title-container h1{
+        font: 72px;
+    }
+
+    #title-container {
+        width: 350px;
+    }
+
+    #toggle-switch {
+        margin: 0;
+        padding: 0;
+    }
+
+    footer {
+        grid-area: footer;
+        align-self: start;
+        margin-top: 0;
+    }
+
+    #div-result {
+        grid-area: content;
+        
     }
 }
+
+
+
