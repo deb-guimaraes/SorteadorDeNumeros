@@ -1,55 +1,66 @@
-const btnSortear = document.querySelector("#btn");
-
-const checkbox = document.querySelector(".checkbox");
-
+const btnSortear = document.querySelector(".btn");
 const arrSorteados = [];
 
 const randomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-btnSortear.addEventListener("click", (e) => {
-    e.preventDefault();
-
+function criarElementoResultado(){
     const qtd = Number(document.querySelector(".num-inp").value);
     const min = Number(document.querySelector(".min-inp").value);
     const max = Number(document.querySelector(".max-inp").value);
-    const checkbox = document.querySelector("input[type='checkbox']").value;
-    document.querySelector("#div-main").hidden = true;
+    const checkbox = document.querySelector("input[type='checkbox']").checked;
 
-    const div = document.createElement("div");
-    div.classList.add("div-result");
+    const divMain = document.querySelector("#div-main");
+    const divResult = document.querySelector("#div-result");
 
-    const footer = document.querySelector("footer");
-    footer.parentNode.insertBefore(div, footer);
+    arrSorteados.length = 0;
+    divResult.innerHTML = "";
 
+    divMain.hidden = true;
+    divResult.hidden = false;
 
-    const p = document.createElement("p");
-    p.textContent = "RESULTADO DO SORTEIO";
-    div.appendChild(p);
-
+    const title = document.createElement("p");
+    title.textContent = "RESULTADO DO SORTEIO";
+    divResult.appendChild(title);
 
     for (let i = 1; i <= qtd; i++) {
-        const numSorteado = randomNumber(min, max);
+        let numSorteado = randomNumber(min, max);
 
         while (arrSorteados.includes(numSorteado) && checkbox == true) {
             numSorteado = randomNumber(min, max);
         }
 
-        arrSorteados.push(numSorteado);
+        arrSorteados.push(numSorteado);    
+        
+        const result = document.createElement("p");
+        result.classList.add("resultado");
+        result.innerHTML = `${i}º RESULTADO`;
+        title.appendChild(result);
 
-        const resultado = document.createElement("p");
-        resultado.classList.add("resultado");
-        resultado.innerHTML = `${i}º RESULTADO`;
-        p.appendChild(resultado);
+        const elemSpan = document.createElement("span");
+        elemSpan.textContent = numSorteado;
+        title.appendChild(elemSpan);
 
-        const elSpan = document.createElement("span");
-        elSpan.textContent = numSorteado;
-        p.appendChild(elSpan);
+    };
 
-    } 
+    const btnReturn = document.createElement("button");
+    btnReturn.classList.add("btn");
+    btnReturn.innerHTML = `SORTEAR NOVAMENTE <i class="hgi hgi-stroke hgi-replay"></i>`;
+    divResult.appendChild(btnReturn);
+
+    btnReturn.addEventListener("click", () => {
+        divResult.innerHTML = "";
+        divMain.hidden = false;
+    });
+}
 
 
-
+btnSortear.addEventListener("click", (e) => {
+    e.preventDefault();
+    criarElementoResultado();
 });
+
+
+
 
