@@ -32,6 +32,9 @@ function criarElementoResultado(){
         }
 
         arrSorteados.push(numSorteado);    
+
+        const container = document.createElement("div");
+        container.classList.add("resultado");
         
         const result = document.createElement("p");
         result.classList.add("resultado");
@@ -45,7 +48,7 @@ function criarElementoResultado(){
     };
 
     const btnReturn = document.createElement("button");
-    btnReturn.classList.add("btn");
+    btnReturn.classList.add("btn-return");
     btnReturn.innerHTML = `SORTEAR NOVAMENTE <i class="hgi hgi-stroke hgi-replay"></i>`;
     divResult.appendChild(btnReturn);
 

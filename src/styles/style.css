@@ -165,7 +165,7 @@ label {
 }
         
       
-.btn {
+.btn, .btn-return {
     width: 100%;
     font: var(--rf-l-medium);
     color: white;
@@ -175,7 +175,7 @@ label {
     border: none;
 }
 
-.btn:hover {
+.btn:hover, .btn-return:hover {
     cursor: pointer;
     background:
             linear-gradient(var(--background-secondary), var(--background-secondary)) padding-box,
@@ -259,6 +259,17 @@ label {
         opacity: 0;
     }
 }
+
+.resultado {
+  position: relative;
+  z-index: 1;
+}
+
+input {
+  position: relative;
+  z-index: 10;
+}
+
 
 
 footer {
